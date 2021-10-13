@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body{
+    min-width: 100vw;
+    min-height: 100vh;
+}
+header{
+    width: 100%;
+    height: 8vh;
+    background-color: aqua;
+}
+.content{
+    height: 92vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns:3fr 1fr ;
+}
+.main-div{
+    background-color: coral;
+}
+aside{
+    background-color: chartreuse;
+}
+
+
+/* Start here  ----      START STAGE */
