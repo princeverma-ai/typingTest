@@ -13,14 +13,26 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>header</header>
+    <header>
+      <div class="nav-item"><i id="icon" class="fas fa-quote-left"></i></div>
+      <div class="nav-item">Home</div>
+      <div class="nav-item">Stats</div>
+      <div class="nav-item">LeaderBoard</div>
+      <div class="nav-item">About Us</div>
+    </header>
 <div class="content">
     <div class="main-div">
         <div class="display-top-bar">
         <button id="restart-button">Restart Progress &olarr;</button>
         <div class="timer"><span id="timerid">1:00</span></div>
-        <div id="topic-selector">Topic &dArr;
-            
+        <div id="topic-selector" >Topic <i class="fas fa-angle-double-right"></i>
+            <ul class="topic-list">
+                <li class="topic-option" value="-1">Random</li>
+                <li class="topic-option" value="0">Biology</li>
+                <li class="topic-option"value="1">Technology</li>
+                <li class="topic-option"value="2">Physics</li>
+                <li class="topic-option"value="3">Facts</li>
+            </ul>
         </div>
     </div>
         <div class="display-area">
@@ -32,6 +44,7 @@
     </div>  <!--start here , dotn play with main div , make a new div container div inside it and do whatever inside thar div and you are free to play with widtha nd height of main div-->
     <aside>aside</aside>
 </div>
+<script src="https://kit.fontawesome.com/239deeb662.js" crossorigin="anonymous"></script>
     <script src="app.js"></script>
 </body>
 </html>
