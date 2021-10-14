@@ -71,7 +71,7 @@ input.addEventListener("input", inputEvent);
 let timeInterval;
 ////////////////////////////////timer
 const timertext = document.querySelector("#timerid");
-function setTimer(time=10){
+function setTimer(time=60){
  timeInterval = setInterval(() => {
   timertext.innerText = `0:${time}`;
   time--;
@@ -96,11 +96,11 @@ resbtn.addEventListener('click',(e)=>{
   input.style.fontWeight="normal";
   input.style.fontSize="1.5em";
   input.style.textAlign="left";
-  timertext.value = "";
+  timertext.value = " ";
   timertext.style.fontSize = "1em";
 
 input.addEventListener("input", inputEvent);
   clearInterval(timeInterval);
-  setTimer(10);
+  setTimer(60);
 
 })
