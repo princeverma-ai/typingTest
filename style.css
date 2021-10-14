@@ -12,7 +12,7 @@ body {
 header {
   width: 100%;
   height: 8vh;
-  background-color: aqua;
+  background-color: #e63946;
 }
 .content {
   height: 92vh;
@@ -21,10 +21,12 @@ header {
   grid-template-columns: 3fr 1fr;
 }
 .main-div {
-  background-color: rgb(241, 210, 199);
+  background-color: white;
+
 }
 aside {
-  background-color: chartreuse;
+  background-color: #f1faee;
+
 }
 /*MID STAGE HERE*/
 textarea:focus,
@@ -43,37 +45,94 @@ select {
   align-items: center;
 }
 .display-area {
-  top: 31%;
+  top: 26%;
   width: 80%;
-  background-color: rgb(25, 0, 255);
+  background:linear-gradient(to bottom ,#4a7d9c,#1d3557);
   align-items: flex-start;
   overflow: hidden;
   line-height: 1.5;
-  border-radius: 25px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  color: #f1faee;
 }
-.text{
-    padding: 0rem 2rem;
-    font-family: 'Noto Sans Mono', monospace;
-    font-size: 1.5em;
-    position: relative;
-    top: 65%;
-    transition: transform 300ms ease-out;
+.display-top-bar {
+  position: relative;
+  left: 45%;
+  width: 80%;
+  max-width: 45rem;
+  height: 5rem;
+  top: 8%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 1.5em;
+}
+#restart-button {
+  width: 25%;
+  height: 60%;
+  border: none;
+  padding: 0.5em;
+  /* background:linear-gradient(to bottom ,#80ffdb,#64dfdf); */
+  background-color: #80ffdb;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-size: 1em;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 200ms;
+}
+#restart-button:hover{
+  background-color: #6efcd3;
+
+}
+
+.timer {
+  font-weight: bolder;
+  font-size: 2em;
+  background: linear-gradient(to bottom , #ccdbfd, #c1d3fe,#b6ccfe,#abc4ff);
+  width: 30%;
+  height: 70%;
+  text-align: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding-top: 1%;
+}
+#topic-selector {
+  font-size: 1.3em;
+  background: linear-gradient(to bottom right, #ffcbf2, #f3c4fb,#ecbcfd,#e5b3fe,#e2afff);
+  width: 25%;
+  height: 60%;
+  text-align: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding-top: 2%;
+  cursor: pointer;
+}
+.text {
+  padding: 0rem 2rem;
+  font-family: "Noto Sans Mono", monospace;
+  font-size: 1.5em;
+  position: relative;
+  top: 65%;
+  transition: transform 300ms ease-out;
 }
 
 .input-area {
   width: 80%;
   height: 10rem;
-  top: 25%;
-  background-color: coral;
+  top: 16%;
 }
-#input{
-    width: 90%;
-    height: 80%;
-    border-radius: 30px;
-    border:none;
-    padding: 1em;
-    font-size: 1.5em;
-
+#input {
+  width: 90%;
+  height: 80%;
+  border-radius: 30px;
+  border: none;
+  padding: 1em;
+  font-size: 1.5em;
+  background: linear-gradient(to left ,#f8edeb,#fae1dd);
 }
 #input::-webkit-scrollbar {
   display: none;
@@ -81,38 +140,19 @@ select {
 #input:focus {
   border: none;
 }
-.positive{
-    padding: 5px;
-    color: greenyellow;
-    font-size: 1.2em;
+.positive {
+  padding: 5px;
+  color: greenyellow;
+  font-size: 1.2em;
 }
 
-.upanim{
-    /* background-color: rgb(71, 145, 230); */
-    animation: upanim 200ms ease-out   forwards ;
-    /* transform: translateY(-50px); */
+.upanim {
+  animation: upanim 200ms ease-out forwards;
 }
 @keyframes upanim {
-    100%{
-        transform: translateY(-50px);
-    }
+  100% {
+    transform: translateY(-50px);
+  }
 }
 
-.timer{
-   width: 20%;
-   height: 8%;
-    position: relative;
-left: 45%;
-top: 10%;
-background-color: hotpink;
-transform: translate(-50%,-50%);
-display: flex;
-justify-content: center;
-align-items: center;
-border-radius: 25px;
-}
-#timerid{
-    font-weight: bolder;
-    font-size: 2em;
-}
 /*  ----      MID STAGE */

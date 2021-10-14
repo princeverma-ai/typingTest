@@ -25,6 +25,7 @@ const words = text.split(" ");
 let slideCount = 1;
 let inputwords = [];
 let matches = 0;
+const resbtn=document.querySelector('#restart-button');
 
 /////////////////////////////////////////////////
 function findInputWords(inText) {
@@ -61,23 +62,45 @@ function checkMatching(inWords) {
   }
   return matchCount;
 }
-
-//Event listener------------------------------------
-input.addEventListener("input", (e) => {
+function inputEvent() {
   inputwords = findInputWords(input.value);
   matches = checkMatching(inputwords);
-  console.log(matches);
-});
-
+}
+//Event listener------------------------------------
+input.addEventListener("input", inputEvent);
+let timeInterval;
 ////////////////////////////////timer
 const timertext = document.querySelector("#timerid");
-let time = 4;
-const timeInterval = setInterval(() => {
+function setTimer(time=10){
+ timeInterval = setInterval(() => {
   timertext.innerText = `0:${time}`;
   time--;
   if (time <= 0) {
     clearInterval(timeInterval);
-    timertext.style.fontSize = "1.4em";
+    timertext.style.fontSize = "0.6em";
     timertext.innerText = `0:00-Time out`;
+    input.style.pointerEvents="none";
+    input.removeEventListener("input",inputEvent)
+    displayText.style.transform="translateY(0px)"
+    input.value="TIME UP!!\n"+` Words- ${matches}`
+    input.style.fontWeight="100";
+    input.style.textAlign="center";
   }
 }, 1000);
+}
+setTimer();
+resbtn.addEventListener('click',(e)=>{
+  input.value=""
+  displayText.style.transform="translateY(0px)"
+  displayText.innerHTML=initialhtml;
+  input.style.fontWeight="normal";
+  input.style.fontSize="1.5em";
+  input.style.textAlign="left";
+  timertext.value = "";
+  timertext.style.fontSize = "1em";
+
+input.addEventListener("input", inputEvent);
+  clearInterval(timeInterval);
+  setTimer(10);
+
+})
