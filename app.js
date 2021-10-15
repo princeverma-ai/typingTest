@@ -91,7 +91,6 @@ function setTimer(time = 60) {
     }
   }, 1000);
 }
-setTimer(60);
 resbtn.addEventListener("click", (e) => {
   input.value = "";
   displayText.style.transform = "translateY(0px)";
@@ -105,7 +104,7 @@ resbtn.addEventListener("click", (e) => {
 
   input.addEventListener("input", inputEvent);
   clearInterval(timeInterval);
-  setTimer(60);
+  setTimer(timingToExecute);
 });
 let clicknum = 0;
 topicSelector.addEventListener("click", (e) => {
@@ -114,16 +113,121 @@ topicSelector.addEventListener("click", (e) => {
   if (clicknum > 1) {
     console.log(e.target);
     clicknum = 0;
-    if(e.target.value==-1){
-      let randomValue=Math.floor(Math.random()*data.length);
-    displayText.innerText=`${data[randomValue]}`
-    }else{
-    if(e.target.value==undefined){
-      displayText.innerText=data[0];
-
-    }else{
-      displayText.innerText=`${data[e.target.value]}`
-    }
+    if (e.target.value == -1) {
+      let randomValue = Math.floor(Math.random() * data.length);
+      displayText.innerText = `${data[randomValue]}`;
+    } else {
+      if (e.target.value == undefined) {
+        displayText.innerText = data[0];
+      } else {
+        displayText.innerText = `${data[e.target.value]}`;
+      }
     }
   }
 });
+
+//molik script
+
+// For drop-down..................
+
+//  use this 2 variable for getting time and difficulity
+var timingToExecute = 60;
+var difficulity = "easy";
+
+dropDown(".drop>button", ".inside-drop", ".drop-btn", ".drop i");
+dropDown(".drop2>button", ".inside-drop2", ".drop-btn2", ".drop2 i");
+function dropIcon(icos) {
+  let ico = document.querySelector(icos);
+  ico.style.transition = "1ms transform";
+  ico.style.transform = "rotateX(0deg)";
+  ico.style.top = "16px";
+}
+function dropIcon2(icos2) {
+  let ico = document.querySelector(icos2);
+  ico.style.transition = "1ms transform";
+  ico.style.transform = "rotateX(180deg)";
+  ico.style.top = "11px";
+}
+function dropDown(forone, fortwo, forthree, icos) {
+  let pBtn = document.querySelector(forone);
+  let dropUl = document.querySelector(fortwo);
+  let dropbtn = document.querySelectorAll(forthree);
+
+  pBtn.addEventListener("click", () => {
+    dropUl.style.display = "block";
+    dropIcon(icos);
+  });
+  dropUl.addEventListener("click", () => {
+    dropUl.style.display = "none";
+    dropIcon2(icos);
+  });
+  for (let i = 0; i < dropbtn.length; i++) {
+    dropbtn[i].addEventListener("click", () => {
+      pBtn.innerText = dropbtn[i].innerText;
+      if (forone == ".drop>button")
+        switch (i) {
+          case 0:
+            timingToExecute = 60;
+            break;
+          case 1:
+            timingToExecute = 120;
+            break;
+          case 2:
+            timingToExecute = 300;
+            break;
+          case 3:
+            timingToExecute = 600;
+            break;
+        }
+      else {
+        switch (i) {
+          case 0:
+            difficulity = "easy";
+            break;
+          case 1:
+            difficulity = "medium";
+            break;
+          case 2:
+            difficulity = "hard";
+            break;
+          case 3:
+            difficulity = "professional";
+            break;
+        }
+      }
+    });
+    dropUl.style.display = "none";
+  }
+}
+/////////////////
+const startstagediv = document.querySelector(".front-main ");
+const displayarea = document.querySelector(".display-area");
+const inputarea = document.querySelector(".input-area");
+const displaytopbar = document.querySelector(".display-top-bar");
+///////////////////////
+let strtTest = document.querySelector("#strt-test");
+strtTest.addEventListener("click", () => {
+  console.log(timingToExecute, difficulity);
+  let pBtn = document.querySelector(".drop>button");
+  pBtn.innerText = "1 Minute Test";
+  pBtn = document.querySelector(".drop2>button");
+  pBtn.innerText = "Easy Text";
+  //////////////////////
+  startstagediv.classList.toggle("startstage");
+  setTimeout(() => {
+    startstagediv.classList.toggle("startstagedisplay");
+  }, 500);
+  setTimeout(() => {
+    displayarea.classList.toggle("midstage");
+    inputarea.classList.toggle("midstage");
+    displaytopbar.classList.toggle("midstage");
+  }, 500);
+  displayarea.classList.toggle("midstageanim");
+  inputarea.classList.toggle("midstageanim");
+  displaytopbar.classList.toggle("midstageanim");
+  setTimer(timingToExecute);
+});
+
+// drop-down ends here..........
+
+//merge code
