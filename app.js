@@ -21,7 +21,7 @@ displayText.innerText = data[2];
 
 const text = displayText.innerText;
 const initialhtml = displayText.innerHTML;
-const words = text.split(" ");
+let words = text.split(" ");
 let slideCount = 1;
 let inputwords = [];
 let matches = 0;
@@ -116,11 +116,14 @@ topicSelector.addEventListener("click", (e) => {
     if (e.target.value == -1) {
       let randomValue = Math.floor(Math.random() * data.length);
       displayText.innerText = `${data[randomValue]}`;
+      words = displayText.innerText.split(" ");
     } else {
       if (e.target.value == undefined) {
         displayText.innerText = data[0];
+        words = displayText.innerText.split(" ");
       } else {
         displayText.innerText = `${data[e.target.value]}`;
+        words = displayText.innerText.split(" ");
       }
     }
   }
