@@ -84,11 +84,15 @@ aside::before {
   background: transparent;
   backdrop-filter: blur(2px);
 }
+aside a{
+  width: 80%;
+  height: 30%;
+}
 
 .site-img {
   position: relative;
-  width: 20em;
-  height: 12rem;
+  width: 100%;
+  height: 100%;
   background-size: cover;
   filter: none;
   z-index: 20;
