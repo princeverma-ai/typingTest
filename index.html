@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!--Project typing test/tutor   -  13/10/2021-->
     <meta charset="UTF-8">
@@ -7,44 +8,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Typing Tutor</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@500&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
-      <div class="nav-item"><i id="icon" class="fas fa-quote-left"></i></div>
-      <div class="nav-item">Home</div>
-      <div class="nav-item">Stats</div>
-      <div class="nav-item">LeaderBoard</div>
-      <div class="nav-item">About Us</div>
+        <div class="nav-item"><i id="icon" class="fas fa-quote-left"></i></div>
+        <div class="nav-item">Home</div>
+        <div class="nav-item">Stats</div>
+        <div class="nav-item">LeaderBoard</div>
+        <div class="nav-item">About Us</div>
     </header>
-<div class="content">
-    <div class="main-div">
-        <div class="display-top-bar">
-        <button id="restart-button">Restart Progress &olarr;</button>
-        <div class="timer"><span id="timerid">1:00</span></div>
-        <div id="topic-selector" >Topic <i class="fas fa-angle-double-right"></i>
-            <ul class="topic-list">
-                <li class="topic-option" value="-1">Random</li>
-                <li class="topic-option" value="0">Biology</li>
-                <li class="topic-option"value="1">Technology</li>
-                <li class="topic-option"value="2">Physics</li>
-                <li class="topic-option"value="3">Facts</li>
-            </ul>
+    <div class="content">
+        <div class="main-div">
+            <div class="display-top-bar">
+                <button id="restart-button">Restart Progress &olarr;</button>
+                <div class="timer"><span id="timerid">1:00</span></div>
+                <div id="topic-selector">Topic <i class="fas fa-angle-double-right"></i>
+                    <ul class="topic-list">
+                        <li class="topic-option" value="-1">Random</li>
+                        <li class="topic-option" value="0">Biology</li>
+                        <li class="topic-option" value="1">Technology</li>
+                        <li class="topic-option" value="2">Physics</li>
+                        <li class="topic-option" value="3">Facts</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="display-area">
+                <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque eveniet ipsum similique
+                    veniam, itaque optio blanditiis quas explicabo debitis error in, exercitationem recusandae incidunt
+                    eaque, eos nemo ducimus dolorem alias! Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Architecto necessitatibus minus aut consectetur ratione blanditiis sequi possimus tenetur inventore
+                    a tempora, quae accusamus excepturi enim dolorum, asperiores voluptatum deserunt voluptatibus! lorem
+                </div>
+            </div>
+            <div class="input-area">
+                <textarea id="input" placeholder="Write here..."></textarea>
+            </div>
         </div>
+        <!--start here , dotn play with main div , make a new div container div inside it and do whatever inside thar div and you are free to play with widtha nd height of main div-->
+
+        <aside>
+            <h1 id="moresitehead">Our More sites:</h1>
+            <a href="https://princeverma-ai.github.io/clone-facebook/"target="_blank" class="links"><img src="site1.png" class="site-img" alt="Visit Site"></a>
+            <a href="https://princeverma-ai.github.io/planets/"target="_blank" class="links"><img src="site2.png" class="site-img"alt=" Visit site"></a>
+        </aside>
     </div>
-        <div class="display-area">
-            <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque eveniet ipsum similique veniam, itaque optio blanditiis quas explicabo debitis error in, exercitationem recusandae incidunt eaque, eos nemo ducimus dolorem alias! Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto necessitatibus minus aut consectetur ratione blanditiis sequi possimus tenetur inventore a tempora, quae accusamus excepturi enim dolorum, asperiores voluptatum deserunt voluptatibus! lorem</div>
-        </div>
-        <div class="input-area">
-            <textarea id="input" placeholder="Write here..."></textarea>
-        </div>
-    </div>  <!--start here , dotn play with main div , make a new div container div inside it and do whatever inside thar div and you are free to play with widtha nd height of main div-->
-    <aside>aside</aside>
-</div>
-<script src="https://kit.fontawesome.com/239deeb662.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/239deeb662.js" crossorigin="anonymous"></script>
     <script src="app.js"></script>
 </body>
+
 </html>
